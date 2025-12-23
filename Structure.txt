@@ -1,0 +1,19 @@
+Tema: Salon de Videojuegos Y Cine
+
+Recursos: PS5 , PS4 , Xbox One , Xbox 360 , VR Glasses , TVs , Salones de Play , Salones de Consolas , Controller-PS , Controller-Xbox, PCs , Audifonos 
+
+Eventos: 1: Reserva de PS5 , PS4 , Xbox One , Xbox 360
+	 2: Torneo de Fifa 
+	 3: Torneo de Call of Duty
+         4: Torneo de Dota
+	 5: Reservar Salon para ver peliculas
+	 
+Restricciones: 1: Reservas de Consolas: Cada consola require de al menos un play controller y solo pueden reservarse de 8:00 am - 10 pm
+	       2: Torneos de Fifa: Requiere 2 play controllers , 8 0 mas clientes , 1 Tv y (PS5 o PS4)
+	       3: Torneos de Call of Duty: Requiere al menos 16 personas y todas Deben cumplir ser de mayores de 16 anos , require 1 Tv , y (Xbox One o Xbox 360)  
+	       4: Torneo de Dota: Solo 16 personas y deben tener 16 audifonos y 16 PCs
+	       5: Reserva de Salon de Peliculas: Requiere TVs	
+
+
+		
+
