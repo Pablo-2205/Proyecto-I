@@ -5,7 +5,7 @@ Recursos: PS5 , PS4 , Xbox One , Xbox 360 , VR Glasses , TVs , Salones de Play ,
 Eventos: 1: Reserva de PS5 , PS4 , Xbox One , Xbox 360
 	 2: Torneo de Fifa 
 	 3: Torneo de Call of Duty
-         4: Torneo de Dota
+     4: Torneo de Dota
 	 5: Reservar Salon para ver peliculas
 	 
 Restricciones: 1: Reservas de Consolas: Cada consola require de al menos un play controller y solo pueden reservarse de 8:00 am - 10 pm

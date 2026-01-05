@@ -1,3 +1,9 @@
+import Resource as resource
+import Events as events
+import Restrictions as restrictions
+
+
+
 class Planificator:
 
     def __init__(self ):
@@ -14,4 +20,5 @@ class Planificator:
         for event in self.events:
             print(event)
 
-   
+newPlanification = Planificator()
+newPlanification.AddEvents()
