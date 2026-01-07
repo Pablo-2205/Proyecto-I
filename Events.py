@@ -38,6 +38,14 @@ class ReservePS4(Events):
         super().validate()
         if(self.start < 8 or self.end > 22): raise ValueError("Las Reservas deben ser entre 8 am y 10 pm")
 
+        hasPS4 = any(r.type == "PS4" for r in self.resources)
+        hasPS4Controller = any(r.type == "PS4 Controller" for r in self.resources)
+
+        if not hasPS4:
+            raise ValueError("La reserva de PS5 requiere una consola PS4")
+        
+        if not hasPS4Controller:
+            raise ValueError("La reserva de PS4 requiere al menos un controlador PS4Controller")
     
 
 
