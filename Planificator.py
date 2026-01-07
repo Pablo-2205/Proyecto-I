@@ -23,9 +23,6 @@ class Planificator:
     
 
 
-
-
-
 newPlanification = Planificator()
 newPlanification.AddEvents(events.ReservePS5("Pablo Rodriguez Reserva" , 8 , 10 , [resource.PS5Controller("PS5 Controller" , 1) , resource.PS5("PS5" , 1)]))
 newPlanification.AddEvents(events.ReservePS4("Jonathan Pavia Reserva" , 10 , 12 , [resource.PS4("PS4" , 2) , resource.PS4Controller("PS4 Controller" , 2)]))

@@ -3,6 +3,7 @@ class Resource :
         self.id = id
         self.type = type
         
+        
 
     
 class PS5(Resource):
@@ -24,6 +25,12 @@ class PS4Controller(Resource):
 class PC(Resource):
     def __init__(self, type, id):
         super().__init__(type , id)
+
+class Xbox360Controller(Resource):
+    def __init__(self, type, id):
+        super().__init__(type, id) 
+    
+
      
 
 
