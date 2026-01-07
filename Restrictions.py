@@ -4,8 +4,12 @@ def Overlap(e1 , e2):
 def IsIncompatible(newEvent , existingEvents):
     for event in existingEvents:
         if(Overlap(newEvent , event)):
-            for resource in newEvent.resource:
-                if(resource in event.resource):
-                    return True
+            print("No se puede reservar")
+            return True
     return False
+
+
+
+
+
 
