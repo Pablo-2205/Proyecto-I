@@ -24,6 +24,6 @@ class Planificator:
 
 
 newPlanification = Planificator()
-newPlanification.AddEvents(events.ReservePS5("Pablo Rodriguez Reserva" , 8 , 10 , [resource.PS5Controller("PS5Controller" , 1) , resource.PS5("PS5" , 1)]))
-newPlanification.AddEvents(events.ReservePS4("Jonathan Pavia Reserva" , 10 , 12 , [resource.PS4("PS4" , 2) , resource.PS4Controller("PS4Controller" , 2)]))
-newPlanification.AddEvents(events.CallofDutyTournament("Torneo 1" , 11, 14 , [resource.TV("TV" , 1) , resource.TV("TV" , 2) , resource.TV("TV" , 3) , resource.TV("TV" , 4) , resource.XboxOne("XboxOne" , 1) , resource.XboxOne("XboxOne" , 2) , resource.XboxOne("XboxOne" , 3) , resource.XboxOne("XboxOne" , 4) , resource.XboxOneController("XboxOneController" , 1) , resource.XboxOneController("XboxOneController" , 1) , resource.XboxOneController("XboxOneController" , 1) , resource.XboxOneController("XboxOneController" , 1) , resource.XboxOneController("XboxOneController" , 1)] , 16 , 16))
+newPlanification.AddEvents(events.ReservePS5("Pablo" , 8 , 9 , [resource.PS5("PS5" , 1) , resource.PS5Controller("PS5Controller" , 1)]))
+newPlanification.AddEvents(events.ReserveXbox360("Reserva Xbox 360 Pedro", 13 , 14 , [resource.Xbox360("Xbox360",1) , resource.Xbox360Controller("Xbox360Controller" , 1)]))
+newPlanification.AddEvents(events.FifaTournament("Fifa Torneo Jorge" , 19 , 20 , [resource.PS5Controller("PS5Controller" , 1) , resource.TV("TV" , 1 ) , resource.PS5("PS5" , 1)] , 8))

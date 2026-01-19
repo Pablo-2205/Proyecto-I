@@ -14,7 +14,7 @@ class Events:
         self.validate()
 
     def validate(self):
-        if(self.end < self.start): raise ValueError
+        if(self.end < self.start): raise ValueError("Reservacion de Hora incorrecta")
 
 
 class ReservePS5(Events):
@@ -24,8 +24,17 @@ class ReservePS5(Events):
         self.CoRequisite()
 
     def CoRequisite(self):
-        hasPS5 = any(r.type == "PS5" for r in self.resources)
-        hasPS5Controller = any(r.type == "PS5Controller" for r in self.resources)
+        hasPS5 = False
+        for r in self.resources:
+            if(r.type == "PS5"): 
+                hasPS5 = r.quantity > 0
+                resource.PS5.quantity -= 1
+
+        hasPS5Controller = False
+        for r in self.resources:
+            if(r.type == "PS5Controller"):
+                hasPS5Controller = r.quantity > 0 
+                resource.PS5Controller.quantity -= 1
         if not hasPS5:
             raise ValueError("La reserva de PS5 requiere una consola PS5")
         
@@ -41,8 +50,15 @@ class ReservePS4(Events):
 
 
     def CoRequisite(self):
-        hasPS4 = any(r.type == "PS4" for r in self.resources)
-        hasPS4Controller = any(r.type == "PS4Controller" for r in self.resources)
+        hasPS4 = False
+        hasPS4Controller = False
+        for r in self.resources:
+            if(r.type == "PS4"): 
+                hasPS4 = r.quantity > 0
+                resource.PS4.quantity -= 1
+            if(r.type == "PS5"):
+                hasPS4Controller = r.quantity > 0 
+                resource.PS4Controller.quantity -= 1
 
         if not hasPS4:
             raise ValueError("La reserva de PS4 requiere una consola PS4")
@@ -59,8 +75,15 @@ class ReserveXbox360(Events):
         if(self.start < 8 or self.end > 22): raise ValueError("Las Reservas deben ser entre 8 am y 10 pm")
         self.CoRequisite()
     def CoRequisite(self):
-        hasXbox360 = any(r.type == "Xbox360" for r in self.resources)
-        hasXbox360Controller = any(r.type == "Xbox360Controller" for r in self.resources)
+        hasXbox360 = False
+        hasXbox360Controller = False
+        for r in self.resources:
+            if(r.type == "Xbox360"):
+                hasXbox360 = r.quantity > 0
+                resource.Xbox360.quantity -= 1
+            if(r.type == "Xbox360Controller"):
+                hasXbox360Controller = r.quantity > 0
+                resource.Xbox360Controller.quantity -= 1
 
         if not hasXbox360:
             raise ValueError("La reserva de Xbox360 requiere una consola Xbox360")
@@ -76,23 +99,26 @@ class DotaTournament(Events):
     
     
     def CoRequisite(self):
-        total_pc_capacity = 0
-        pc_count = 0
+        pc_count = False
+        headphones_count = False
         
         for r in self.resources:
             if r.type == "PC":
-                pc_count += 1
-                total_pc_capacity += getattr(r, 'capacity', 1)
+                pc_count = r.quantity >= 16
+                resource.PC.quantity -= 16
+            if r.type == "HeadPhones" :
+                headphones_count = r.quantity >= 16
+                resource.HeadPhones.quantity -= 16
+            
         
-        if pc_count == 0:
-            raise ValueError("El torneo de Dota requiere al menos una PC")
         
-        if total_pc_capacity < 16:
-            raise ValueError(f"Se necesitan 16 capacidades de PC (tiene {total_pc_capacity})")
+        if not pc_count :
+            raise ValueError("El torneo de Dota requiere al menos 16 PCs")
         
-        headphone_count = sum(1 for r in self.resources if r.type == "HeadPhones")
-        if headphone_count < 16:
-            raise ValueError(f"Se necesitan 16 audífonos (tiene {headphone_count})")
+        if not headphones_count:
+            raise ValueError("El torneo de Dota requiere al menos 16 audifonos")
+        
+        
 
 class FifaTournament(Events):
     def __init__(self, descrpition, start, end, resources, clients=0, minAge=0):
@@ -108,17 +134,26 @@ class FifaTournament(Events):
         self.CoRequisite()
     
     def CoRequisite(self):
-        ps_controllers = sum(1 for r in self.resources if r.type in ["PS5Controller", "PS4Controller"])
-        if(ps_controllers < 2):
-            raise ValueError("Requiere 2 controllers")
+        ps_controllers_count = False
+        pS_count = False
+        Tvs_count = False
+
+        for r in self.resources:
+            if(r.type == "PS5Controller"):
+                ps_controllers_count = r.quantity >= 2
+                resource.PS5Controller.quantity -= 2
+            if(r.type == "PS5"):
+                pS_count = r.quantity >= 4
+                resource.PS5.quantity -= 4            
+
+            if(r.type == "TV"):
+                Tvs_count = r.quantity >= 4
+                resource.TV.quantity -= 4
         
-        hasTv = any(r.type == "TV" for r in self.resources)
-        if(not hasTv):
-            raise ValueError("Se necesita de una TV")
+        if not(ps_controllers_count and pS_count and Tvs_count):
+            raise ValueError("Faltan recursos")
         
-        hasConsole = any(r.type in ["PS5" , "PS4"] for r in self.resources)
-        if(not hasConsole):
-            raise ValueError("Requiere de una consola")
+        
         
 class CallofDutyTournament(Events):
     def __init__(self, descrpition, start, end, resources, clients=16, minAge=16):
@@ -133,6 +168,7 @@ class CallofDutyTournament(Events):
             raise ValueError("Se necesitan 16 clientes")
         
         if(self.minAge < 16):
+            
             raise ValueError("Todos los participantes deben ser mayores de 16 años")
         
         self.CoRequisite()
