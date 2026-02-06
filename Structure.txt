@@ -11,7 +11,7 @@ Eventos: 1: Reserva de PS5 , PS4 , Xbox One , Xbox 360
 	 
 Restricciones: 1: Reservas de Consolas: Cada consola require de al menos un play controller y solo pueden reservarse de 8:00 am - 10 pm
 	       2: Torneos de Fifa: Requiere 2 play controllers , 8 o mas clientes , 1 Tv y (PS5 o PS4)
-	       3: Torneos de Call of Duty: Requiere al menos 16 personas y todas Deben cumplir ser de mayores de 16 anos , require 4 Tvs , y 4(Xbox One) o  4(Xbox 360)  
+	       3: Torneos de Call of Duty: Requiere al menos 16 personas y todas Deben cumplir ser de mayores de 16 anos , require 4 Tvs , y 4(Xbox One)  
 	       4: Torneo de Dota: Solo 16 personas y deben tener 16 audifonos y 16 PCs
 	       5: Reserva de Salon de Peliculas: Requiere TVs	
 
