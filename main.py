@@ -1,4 +1,3 @@
-# main.py (versión completa con búsqueda de huecos)
 import sys
 from datetime import datetime, timedelta
 import Events as events
@@ -52,8 +51,8 @@ def agregar_evento_manual(planificador):
     
     print("\nTipos de eventos disponibles:")
     print("1. Reserva de PS5 (requiere 1 PS5 + 2 controles)")
-    print("2. Reserva de PS4 (requiere 1 PS4 + 1 control)")
-    print("3. Reserva de Xbox 360 (requiere 1 Xbox360 + 1 control)")
+    print("2. Reserva de PS4 (requiere 1 PS4 + 2 control)")
+    print("3. Reserva de Xbox 360 (requiere 1 Xbox360 + 2 control)")
     print("4. Torneo de Dota (requiere 16 PCs + 16 audífonos, 16 personas)")
     print("5. Torneo de FIFA (requiere 4 PS5 + 2 controles + 4 TVs, mínimo 8 personas)")
     print("6. Torneo de Call of Duty (requiere 4 XboxOne + 16 controles + 4 TVs, mínimo 16 personas, edad 16+)")
@@ -180,8 +179,8 @@ def buscar_hueco_disponible(planificador):
     
     print("\nTipos de eventos disponibles:")
     print("1. Reserva de PS5 (1 PS5 + 2 controles)")
-    print("2. Reserva de PS4 (1 PS4 + 1 control)")
-    print("3. Reserva de Xbox 360 (1 Xbox360 + 1 control)")
+    print("2. Reserva de PS4 (1 PS4 + 2 control)")
+    print("3. Reserva de Xbox 360 (1 Xbox360 + 2 control)")
     print("4. Torneo de Dota (16 PCs + 16 audífonos, 16 personas)")
     print("5. Torneo de FIFA (4 PS5 + 2 controles + 4 TVs, mínimo 8 personas)")
     print("6. Torneo de Call of Duty (4 XboxOne + 16 controles + 4 TVs, 16 personas, edad 16+)")
