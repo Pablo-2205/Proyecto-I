@@ -2,7 +2,7 @@ import sys
 from datetime import datetime, timedelta
 import Events as events
 import Planificator as plan
-import Resource as resource  # Importamos Resource para mostrar disponibilidad
+import Resource as resource  
 from Events import create_event_from_dict
 
 def mostrar_menu():
