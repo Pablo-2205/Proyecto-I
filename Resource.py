@@ -1,4 +1,3 @@
-# Resource.py (versión mejorada)
 from datetime import datetime, timedelta
 import copy
 
@@ -112,9 +111,7 @@ class Resource:
     
     @classmethod
     def get_next_available_slot(cls, duration_hours, date=None, start_hour=8, end_hour=22):
-        """
-        Encuentra el próximo slot disponible para una duración específica.
-        """
+       
         if date is None:
             date = datetime.now().date()
         
