@@ -168,7 +168,7 @@ class PC(Resource):
         super().__init__("PC", id)
 
 class Xbox360Controller(Resource):
-    quantity = 10
+    quantity = 16
     bookings = []
     
     def __init__(self, type, id):
@@ -189,7 +189,7 @@ class XboxOne(Resource):
         super().__init__("XboxOne", id)
 
 class XboxOneController(Resource):
-    quantity = 10
+    quantity = 16
     bookings = []
     
     def __init__(self, type, id):
